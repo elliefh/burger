@@ -13,6 +13,8 @@
 
 Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat. Whenever a user submits a burger's name, the app will display the burger on the left side of the page under 'Burgers To Be Devoured'. Each burger in the waiting area also has a `Devour` button. When the user clicks the button, the burger will move to the right side of the page under 'Burgers Devoured'. The application stores every burger in a MySQL database and utilizes Node, Express, Handlebars, and customized ORM. 
 
+![Image](./assets/app.png)
+
 ## Links
 - [Repository](https://github.com/elliefh/burger)
 - [Deployed](https://efh-burger.herokuapp.com)
