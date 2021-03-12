@@ -1,22 +1,33 @@
-<h1 class="d-flex justify-content-center">Eat Da Burger!</h1>
-<img src="https://media3.giphy.com/media/IgOEWPOgK6uVa/200w.webp?cid=ecf05e471u05fm3bcpxxoq94yjcbxmt8jsd86xcenbu6dsms&rid=200w.webp" alt="patrick-eating-burgers">
+<h1 class="d-flex justify-content-center p-5">Eat Da Burger!</h1>
+<div class="row d-flex justify-content-center">
+  <img src="https://media3.giphy.com/media/IgOEWPOgK6uVa/200w.webp?cid=ecf05e471u05fm3bcpxxoq94yjcbxmt8jsd86xcenbu6dsms&rid=200w.webp" alt="patrick-eating-burgers" class="img-fluid">
+
+</div>
 <div class = "row">
-  <div class="col-md d-flex justify-content-center">
-    <h2>Burgers Ready To Be Devoured!</h2>
+  <div class="col-md">
+    <div class="row">
+      <h2 class="d-flex justify-content-center p-3">Burgers Ready To Be Devoured!</h2>
+    </div>
+    <div class="row p-1">
       <ul>
-        {{#each burger}}
-          {{#unless devoured}}
-          <li id={{this.id}}>
-            {{this.burger_name}}
-            <button class="devour-burger" data-id = {{this.id}}>Devour It!</button>
-          </li>
-          {{/unless}}
-        {{/each}}
-      </ul>
+      {{#each burger}}
+        {{#unless devoured}}
+        <li id={{this.id}}>
+          {{this.burger_name}}
+          <button class="devour-burger" data-id = {{this.id}}>Devour It!</button>
+        </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
+    </div>    
   </div>
-  <div class="col-md d-flex justify-content-center">
-    <h2>Burgers Devoured!</h2>
-    <ul>
+  
+  <div class="col-md">
+    <div class="row">
+      <h2 class="d-flex justify-content-center p-3">Burgers Devoured!</h2>
+    </div>
+    <div class="row p-1">
+      <ul>
       {{#each burger}}
         {{#if devoured}}
         <li id={{this.id}}>
@@ -25,15 +36,16 @@
         </li>
         {{/if}}
       {{/each}}
-    </ul>
+      </ul>
+    </div>
   </div>
 </div>
 
 <div>
   <div class="row">
-    <h2 class="d-flex justify-content-center">Add A Burger</h2>
+    <h2 class="d-flex justify-content-center pt-3">Add A Burger</h2>
   </div>
-  <div class="row">
+  <div class="row p-3">
     <form class="create-form d-flex justify-content-center">
       <div class="form-group">
         <label for="ca">Burger Name:</label>
