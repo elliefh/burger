@@ -4,9 +4,12 @@
   <div class="col-md d-flex justify-content-center">
     <h2>Burgers Ready To Be Devoured!</h2>
       <ul>
-        {{#each burgers}}
+        {{#each burger}}
           {{#unless devoured}}
-                  {{> burgers/burgers-block devoured=true}}
+          <li id={{this.id}}>
+            {{this.burger_name}}
+            <button class="devour-burger" data-id = {{this.id}}>Devour It!</button>
+          </li>
           {{/unless}}
         {{/each}}
       </ul>
@@ -14,9 +17,12 @@
   <div class="col-md d-flex justify-content-center">
     <h2>Burgers Devoured!</h2>
     <ul>
-      {{#each burgers}}
+      {{#each burger}}
         {{#if devoured}}
-        {{> burgers/burgers-block devoured=false}}
+        <li id={{this.id}}>
+            {{this.burger_name}}
+            <button class="delete-burger" data-id = {{this.id}}>Delete</button>
+        </li>
         {{/if}}
       {{/each}}
     </ul>
