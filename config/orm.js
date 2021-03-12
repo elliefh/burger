@@ -41,9 +41,7 @@ const orm = {
     queryString += " (";
     queryString += col.toString();
     queryString += ") ";
-    queryString += "VALUES (";
-    queryString += printQuestionMarks(val.length);
-    queryString += ") ";
+    queryString += "VALUES (?)";
 
     console.log(queryString);
 
