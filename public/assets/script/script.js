@@ -29,7 +29,8 @@ $(function() {
         name: $("#ca").val().trim(),
         devoured: 0
       };
-  
+
+      console.log(newBurger);
       // Send the POST request.
       $.ajax("/api/burgers", {
         type: "POST",
@@ -52,6 +53,21 @@ $(function() {
       }).then(
         function() {
           console.log("deleted burger", id);
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
+
+    $(".devour-burger").on("click", function(event) {
+      var id = $(this).data("id");
+  
+     // Send the PUT request
+      $.ajax("/api/burgers/" + id, {
+        type: "PUT"
+      }).then(
+        function() {
+          console.log("devoured burger", id);
           // Reload the page to get the updated list
           location.reload();
         }
